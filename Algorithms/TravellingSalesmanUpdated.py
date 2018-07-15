@@ -48,8 +48,8 @@ def DrawPath(tempcities, canvas, tempdistance, cities, record_cities, Total_dist
     # print(record_cities, "This is RecordCities under DrawPath")
     for j in range(len(tempcities)):
         if(j != 0):
-            tempdistance.append(dist(tempcities[0].real, tempcities[0].imag,
-                                     tempcities[j].real, tempcities[j].imag))
+            tempdistance.append(
+                dist(tempcities[0].real, tempcities[0].imag, tempcities[j].real, tempcities[j].imag))
 
 
 # ----------------------------------- Initial case ---------------------------------------------------------
@@ -125,8 +125,8 @@ def FinalDrawPath(tempcities, canvas, distance):
 
     # print(tempcities[0], record_c2, record_index)
     # print(distance)
-    ln = canvas.create_line(tempcities[0].real, tempcities[0].imag, record_c2.real,
-                            record_c2.imag, width=3, fill="green")
+    ln = canvas.create_line(tempcities[0].real, tempcities[0].imag,
+                            record_c2.real, record_c2.imag, width=3, fill="green")
     del(tempcities[0])
 
     # print(tempcities)
@@ -169,17 +169,15 @@ for i in range(5):
     create_circle(cities[i].real, cities[i].imag, 3, i)
 
 tempcities = list(cities)
-# print(cities, "this is under main")
+
 record_cities = []
 Total_distance_array = []
-infolist = []
+
 for i in range(len(cities)):
     # print("\n", i, "this is i")  # Check to see if loop works fine
     tempdistance = []  # reinitializing tempdistance so we do not have any overwrite issues between different tempcities
     # Drawing the path between cities (with minimum distance)
-    DrawPath(tempcities, canvas, tempdistance, cities,
-             record_cities, Total_distance_array, 0)
-    # print(infolist, "This is infolist")
+    DrawPath(tempcities, canvas, tempdistance, cities, record_cities, Total_distance_array, 0)
     cities = rotate_cities(cities)  # rotate the cities list to construct a different path.
     tempcities = list(cities)  # redefine tempcities to pass into Drawpath
     # print(tempcities, "t----")  # check to see if tempcities is copied properly
