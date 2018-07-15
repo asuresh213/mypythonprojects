@@ -25,14 +25,22 @@ def Draw(layers, v1, v2, v3):
 
 
 root = Tk()
-canvas = Canvas(root, bg="black", height=600, width=600)
+w = 700
+h = 700
+canvas = Canvas(root, bg="black", height=h, width=w)
 root.title("Sirprinsky")
 canvas.pack()
 layers = 6
-canvas.create_polygon(300, 100, 100, 500, 500, 500, outline="white", width=2)
-v1 = complex(300, 100)
-v2 = complex(100, 500)
-v3 = complex(500, 500)
+x1 = w/2
+y1 = 100
+x2 = 100
+y2 = h - 100
+x3 = w - 100
+y3 = h - 100
+canvas.create_polygon(x1, y1, x2, y2, x3, y3, outline="white", width=2)
+v1 = complex(x1, y1)
+v2 = complex(x2, y2)
+v3 = complex(x3, y3)
 Draw(layers, v1, v2, v3)
 
 
