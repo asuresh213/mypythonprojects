@@ -5,7 +5,7 @@ import sys
 print(sys.version)
 
 # print(complex(num*num))
-c = complex(0, -0.8)  # can be changed to liking
+c = complex(-0.8, 0.156)  # can be changed to liking
 
 
 def translate(value, leftMin, leftMax, rightMin, rightMax):
