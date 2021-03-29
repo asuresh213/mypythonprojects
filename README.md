@@ -1,2 +1,2 @@
 # mypythonprojects
-A repo to store my python projects
+A repository to store my toy python projects
